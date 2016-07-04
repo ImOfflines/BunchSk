@@ -1,2 +1,0 @@
-# BunchSk
-BunchSk official source
