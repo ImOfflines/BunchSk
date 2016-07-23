@@ -21,13 +21,11 @@ public class CondCanPickup extends Condition {
     public boolean check(Event event) {
         LivingEntity e = this.e.getSingle(event);
         if (e == null) return false;
-        if (e.getCanPickupItems()) {
-            if (matchedPattern == 0) return true;
-            return false;
-        } else {
-            if (matchedPattern == 0) return false;
-            return true;
+        Boolean b = matchedPattern == 0 ? false : true;
+        if (e.getCanPickupItems()){
+            b = !b;
         }
+        return b;
     }
 
     public String toString(Event event, boolean b) {
