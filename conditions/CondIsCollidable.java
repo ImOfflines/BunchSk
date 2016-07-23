@@ -22,7 +22,7 @@ public class CondIsCollidable extends Condition {
         LivingEntity e = this.e.getSingle(event);
         if (e == null) return false;
         Boolean b = matchedPattern == 0 ? false : true;
-        if (e.getCanPickupItems()){
+        if (e.isCollidable()){
             b = !b;
          }
         return b;
